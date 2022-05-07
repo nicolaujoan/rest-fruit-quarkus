@@ -57,3 +57,38 @@ If you want to learn more about building native executables, please consult http
 Easily start your Reactive RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+
+### DATABASE STUFF:
+
+##### commands:
+
+have a setup [script](./sql/start.sql)
+
+start db:
+
+```
+docker-compose up -d
+```
+
+stop db:
+
+```
+docker-compose down 
+```
+
+--- 
+### connections:
+
+```
+docker exec -it <CONTAINER_ID> /bin/bash
+```
+or use a gui tool at 5438 port with:
+
+user = postgres <br>
+password = postgres
+
+### little tricks:
+
+- can set the environment variable of POSTGRES_DB = "db_name" to have a default name to our database
+
+
