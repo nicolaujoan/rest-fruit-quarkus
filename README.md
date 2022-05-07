@@ -97,5 +97,20 @@ password = postgres
      ```
     where default db-name = postgres
 
-- if running in linux, psql can clear console with ctrl + l
+- if running in linux, psql can clear console with ctrl + l and \q to quit
 
+good stuff in this [website](https://www.postgresqltutorial.com/) about postgres
+
+### automatic tests:
+
+execute the following:
+
+``` 
+bash test.sh
+``` 
+
+### execute app
+```
+bash start.sh
+``` 
+- curl to endpoints or setup postman and configure it
