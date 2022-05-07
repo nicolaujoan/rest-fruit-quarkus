@@ -91,4 +91,11 @@ password = postgres
 
 - can set the environment variable of POSTGRES_DB = "db_name" to have a default name to our database
 
+- if connect via docker exec, type the following:
+    ```
+    psql -U "db-name"
+     ```
+    where default db-name = postgres
+
+- if running in linux, psql can clear console with ctrl + l
 
