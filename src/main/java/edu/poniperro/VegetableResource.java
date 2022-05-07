@@ -12,6 +12,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import java.util.List;
+
 /**
  * cuidado con el tipo long del id, es el generado por panache
  * recurso: queda clean, el responsable de buscarse o guardarse... es la propia entidad
@@ -21,10 +23,23 @@ import javax.ws.rs.core.Response;
 public class VegetableResource {
 
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Vegetable> getList() {
+        return Vegetable.findAll().list();
+    }
+
+    @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Vegetable getVegetableById(@PathParam("id") Long id) {
         return Vegetable.find("id", id).firstResult();
+    }
+
+    @GET
+    @Path("{name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Vegetable getVegetableByName(@PathParam("name") String name) {
+        return Vegetable.find("name", name).firstResult();
     }
     
     @POST
