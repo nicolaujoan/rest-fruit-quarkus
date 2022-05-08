@@ -5,19 +5,19 @@ DROP TABLE IF EXISTS legume;
 
 -- create tables again
 CREATE TABLE vegetable (
-    id serial PRIMARY KEY,
+    id INT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR UNIQUE NOT NULL, 
     description VARCHAR UNIQUE NOT NULL
 );
 
 CREATE TABLE fruit (
-    id serial PRIMARY KEY,
+    id INT GENERATED ALWAYS AS IDENTITY
     name VARCHAR UNIQUE NOT NULL, 
     description VARCHAR UNIQUE NOT NULL
 );
 
 CREATE TABLE legume (
-    id serial PRIMARY KEY,
+    id INT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR UNIQUE NOT NULL, 
     description VARCHAR UNIQUE NOT NULL
 );
