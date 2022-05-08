@@ -1,30 +1,21 @@
 package edu.poniperro;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 
-@Path("/legumes")
+@Path("/legume")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class LegumeResource {
 
-    private Set<Legume> legumes = new LinkedHashSet<Legume>();
-
-    public LegumeResource() {
-        legumes.add(new Legume("Carrot", "Root vegetable, usually orange"));
-        legumes.add(new Legume("Zucchini", "Summer squash"));
-    }
-
     @GET
-    public Response list() {
-        return Response.ok(legumes).build();
+    public List<Legume> list(Legume legume) {
+        return Legume.listAll();
     }
 }

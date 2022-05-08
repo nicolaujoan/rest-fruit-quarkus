@@ -1,14 +1,16 @@
 package edu.poniperro;
 
-public class Legume {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
+@Entity
+public class Legume extends PanacheEntity {
     
+    @Column(unique = true)
     public String name;
+
+    @Column
     public String description;
-
-    public Legume(){}
-
-    public Legume(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
 }
