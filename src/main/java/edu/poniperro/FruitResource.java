@@ -40,6 +40,7 @@ public class FruitResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("{id}")
     public Response delete(@PathParam("id") Long id) {
-        return fruitService.deleteFruitById(id);
+        fruitService.deleteFruitById(id);
+        return Response.status(202).build();
     }
 }

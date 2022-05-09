@@ -4,7 +4,6 @@ import java.net.URI;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import edu.poniperro.domain.Fruit;
@@ -22,8 +21,8 @@ public class FruitService {
         .build();
     }
 
-    public Response deleteFruitById(Long id) {
+    public List<Fruit> deleteFruitById(Long id) {
         Fruit.deleteById(id);
-        return Response.status(202, MediaType.APPLICATION_JSON).build();
+        return this.listFruits();
     }
 }
