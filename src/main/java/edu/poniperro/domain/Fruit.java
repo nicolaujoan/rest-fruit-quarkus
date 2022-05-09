@@ -1,4 +1,4 @@
-package edu.poniperro;
+package edu.poniperro.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,4 +13,11 @@ public class Fruit extends PanacheEntity {
 
     @Column
     public String description;
+
+    public Fruit() {} // hibernate needs it
+
+    public Fruit(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }

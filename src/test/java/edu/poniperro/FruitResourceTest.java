@@ -1,6 +1,9 @@
 package edu.poniperro;
 
 import org.junit.jupiter.api.Test;
+
+import edu.poniperro.domain.Fruit;
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 import io.quarkus.test.junit.QuarkusTest;
