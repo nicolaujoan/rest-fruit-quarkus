@@ -1,6 +1,7 @@
 package edu.poniperro.repositories;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.transaction.Transactional;
 
 import edu.poniperro.domain.Fruit;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
@@ -20,6 +21,7 @@ public class FruitRepository implements PanacheRepository<Fruit> {
         return listAll();
     }
 
+    @Transactional
     public void addFruit(Fruit fruit) {
         persist(fruit);
     }
